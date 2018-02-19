@@ -1,0 +1,14 @@
+PP <- matrix(c(0.171, 0.544, 0, 0, 
+                0, 0, 0.394, 0,
+                0, 0, 0, 0.221,
+                76, 0, 0, 0.646
+                ), nrow = 4)
+PP
+# this is the population projection aka Leslie Matrix
+PV <- matrix(c(0, 0, 0, 37228), ncol = 1)
+T <- PP %*% PV
+T
+# This is assuming that there are no other starting individuals than adults
+years <- 10
+N.projections <- matrix(matrix(0, nrow = nrow(PP), ncol = years + 1)
+N.projections[, 1]<- PV
